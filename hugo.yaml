@@ -1,3 +1,93 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: My New Hugo Site
+title: Simo.Dev
+
+theme: ["PaperMod"]
+
+enableEmoji: true
+enableGitInfo: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home:
+    - HTML
+    - JSON
+
+frontmatter:
+  date:
+    - :fileModTime
+  lastmod:
+    - :git
+
+params:
+  title: Simo'Blog
+  author: Simo Zhang
+  ShowWordCount: true
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  math: true
+  showReadingTime: true
+  displayFullLangName: true
+
+  ShowPostNavLinks: true
+  ShowBreadCrubms: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: false
+  ShowPageNums: true
+  ShowToc: true
+  UseHugoToc: true
+
+  homeInfoParams:
+    Title: Welcome wave
+    Content: Hi! I am Simo.
+
+  profileMode:
+    enbabled: false
+
+  socialIcons:
+    - name: github
+      title: Follow me on Github
+      url: "https://github.com/svm-zhang"
+    - name: linkedin
+      title: Connect me on LinkedIn
+
+markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+
+  # https://gohugo.io/content-management/mathematics/
+  # https://behova.net/posts/hugo-setup/
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - "@@"
+              - "@@"
+          inline:
+            - - "@"
+              - "@"
+
+menu:
+  main:
+    - identifier: Posts
+      name: Posts
+      url: posts/
+      weight: 10
+    - identifier: archive
+      name: Archive
+      url: archive/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: tags/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: search/
+      weight: 40
