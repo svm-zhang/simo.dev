@@ -1,0 +1,14 @@
+<!-- layouts/partials/toc.html -->
+{{- if .TableOfContents }}
+<div class="toc-wrapper">
+  <div class="toc-container">
+    <div class="toc-header">
+      <div class="toc-title">What's on this page</div>
+      <div class="progress-indicator">
+        <div class="progress-bar"></div>
+      </div>
+    </div>
+    {{ .TableOfContents }}
+  </div>
+</div>
+{{- end }}
